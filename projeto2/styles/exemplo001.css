@@ -1,0 +1,28 @@
+.ex001 .azul {
+    color: blue;
+    background-color: aqua;
+}
+
+.verde {
+    color: #0F0;
+    background-color: mediumslateblue;
+}
+
+.azul {
+    color: white;
+    background-color: blue;
+    margin-top: 0px;
+}
+
+.azul, .verde {
+    padding: 40px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cinza {
+    color: white;
+    background-color: gray;
+}
