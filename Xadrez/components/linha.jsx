@@ -6,19 +6,23 @@ export default function init(props) {
     let lin = [];
     for (let i = 0; i < props.dimensao; i++) {
         if (isBlack) {
-            lin.push(<Celula preto={props.preto} />);
+            lin.push(<Celula key={i} preto={props.preto} />);
             isBlack = false;
         } else {
-            lin.push(<Celula preto={!props.preto} />);
+            lin.push(<Celula key={i} preto={!props.preto} />);
             isBlack = true;
         }
     }
 
     return (
         <div className={css.lin}>
-            {lin.map((item, index) => (
-                <span key={index}>{item}</span>
-            ))}
+            {lin}
         </div>
+        
+        // <div className={css.lin}>
+        //     {lin.map((item, index) => (
+        //         <span key={index}>{item}</span>
+        //     ))}
+        // </div>
     );
 }

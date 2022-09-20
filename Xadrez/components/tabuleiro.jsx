@@ -3,13 +3,16 @@ import Linha from "./linha";
 export default function init(props) {
     let isBlack = true;
     let tab = [];
+    let dim
 
-    for (let i = 0; i < props.dimensao; i++) {
+    props.dimensao ? dim = props.dimensao : dim = 5
+
+    for (let i = 0; i < dim; i++) {
         if (isBlack) {
-            tab.push(<Linha preto dimensao={props.dimensao} />);
+            tab.push(<Linha key={i} preto dimensao={dim} />);
             isBlack = false;
         } else if (isBlack === false) {
-            tab.push(<Linha dimensao={props.dimensao} />);
+            tab.push(<Linha key={i} dimensao={dim} />);
             isBlack = true;
         }
     }
@@ -17,10 +20,12 @@ export default function init(props) {
     console.log("Array: ", tab.length);
 
     return (
-        <div>
-            {tab.map((item, index) => (
-                <span key={index}>{item}</span>
-            ))}
-        </div>
+        tab
+
+        // <div>
+        //     {tab.map((item, index) => (
+        //         <span key={index}>{item}</span>
+        //     ))}
+        // </div>
     );
 }
